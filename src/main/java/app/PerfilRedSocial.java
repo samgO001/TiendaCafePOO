@@ -1,8 +1,6 @@
-package modelo;
+package src.main.java.app;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Clase que representa un perfil de red social.

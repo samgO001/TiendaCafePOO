@@ -1,6 +1,8 @@
-import modelo.CafeEspecialidad;
-import modelo.TicketTransporte;
-import modelo.PerfilRedSocial;
+package src.main.java;
+
+import src.main.java.app.CafeEspecialidad;
+import src.main.java.app.TicketTransporte;
+import src.main.java.app.PerfilRedSocial;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

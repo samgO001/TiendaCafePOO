@@ -1,4 +1,4 @@
-package modelo;
+package src.main.java.app;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
