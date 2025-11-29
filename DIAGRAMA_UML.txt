@@ -1,0 +1,137 @@
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                           DIAGRAMA UML - CLASES DEL PROYECTO ENTORNOPOO                                        ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────┐
+│        CafeEspecialidad                         │
+├─────────────────────────────────────────────────┤
+│ - origen: String                                │
+│ - temperatura: double                           │
+│ - tamanio: int                                  │
+│ - precio: BigDecimal                            │
+│ - intensidad: int                               │
+│ - fechaTostado: LocalDate                       │
+├─────────────────────────────────────────────────┤
+│ + CafeEspecialidad()                            │
+│ + CafeEspecialidad(String, double, int,        │
+│                    BigDecimal, int, LocalDate) │
+│ + getOrigen(): String                           │
+│ + setOrigen(String): void                       │
+│ + getTemperatura(): double                      │
+│ + setTemperatura(double): void                  │
+│ + getTamanio(): int                             │
+│ + setTamanio(int): void                         │
+│ + getPrecio(): BigDecimal                       │
+│ + setPrecio(BigDecimal): void                   │
+│ + getIntensidad(): int                          │
+│ + setIntensidad(int): void                      │
+│ + getFechaTostado(): LocalDate                  │
+│ + setFechaTostado(LocalDate): void              │
+│ + toString(): String                            │
+└─────────────────────────────────────────────────┘
+
+
+┌──────────────────────────────────────────────────┐
+│        TicketTransporte                          │
+├──────────────────────────────────────────────────┤
+│ - linea: String                                  │
+│ - origen: String                                │
+│ - destino: String                               │
+│ - precio: BigDecimal                            │
+│ - fecha: LocalDate                              │
+│ - horaSalida: LocalTime                         │
+├──────────────────────────────────────────────────┤
+│ + TicketTransporte()                            │
+│ + TicketTransporte(String, String, String,     │
+│                    BigDecimal, LocalDate,      │
+│                    LocalTime)                  │
+│ + getLinea(): String                            │
+│ + setLinea(String): void                        │
+│ + getOrigen(): String                           │
+│ + setOrigen(String): void                       │
+│ + getDestino(): String                          │
+│ + setDestino(String): void                      │
+│ + getPrecio(): BigDecimal                       │
+│ + setPrecio(BigDecimal): void                   │
+│ + getFecha(): LocalDate                         │
+│ + setFecha(LocalDate): void                     │
+│ + getHoraSalida(): LocalTime                    │
+│ + setHoraSalida(LocalTime): void                │
+│ + toString(): String                            │
+└──────────────────────────────────────────────────┘
+
+
+┌──────────────────────────────────────────────────┐
+│        PerfilRedSocial                           │
+├──────────────────────────────────────────────────┤
+│ - alias: String                                 │
+│ - numeroSeguidores: long                        │
+│ - numeroSiguiendo: long                         │
+│ - fotoPerfil: String                            │
+│ - biografia: String                             │
+│ - fechaRegistro: LocalDate                      │
+├──────────────────────────────────────────────────┤
+│ + PerfilRedSocial()                             │
+│ + PerfilRedSocial(String, long, long, String,  │
+│                   String, LocalDate)           │
+│ + getAlias(): String                            │
+│ + setAlias(String): void                        │
+│ + getNumeroSeguidores(): long                   │
+│ + setNumeroSeguidores(long): void               │
+│ + getNumeroSiguiendo(): long                    │
+│ + setNumeroSiguiendo(long): void                │
+│ + getFotoPerfil(): String                       │
+│ + setFotoPerfil(String): void                   │
+│ + getBiografia(): String                        │
+│ + setBiografia(String): void                    │
+│ + getFechaRegistro(): LocalDate                 │
+│ + setFechaRegistro(LocalDate): void             │
+│ + toString(): String                            │
+└──────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                          NOTAS DE DISEÑO                                                      ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+✓ ENCAPSULAMIENTO:
+  - Todos los atributos son private (-)
+  - Acceso controlado mediante getters/setters públicos (+)
+
+✓ CONSTRUCTORES:
+  - Constructor vacío con valores por defecto razonables
+  - Constructor con parámetros que utiliza setters para reutilizar validaciones
+
+✓ VALIDACIONES EN SETTERS:
+  • CafeEspecialidad:
+    - origen: No nulo, no vacío
+    - temperatura: 40°C - 100°C
+    - tamanio: 1 - 1000 ml
+    - precio: 0 - 10,000
+    - intensidad: 1 - 10
+    - fechaTostado: 2010 - hoy
+
+  • TicketTransporte:
+    - linea, origen, destino: No nulo, no vacío
+    - precio: 0 - 50,000
+    - fecha: No futura
+    - horaSalida: No nulo
+
+  • PerfilRedSocial:
+    - alias: Mínimo 3 caracteres
+    - numeroSeguidores, numeroSiguiendo: No negativos
+    - fotoPerfil: No nulo, no vacío
+    - biografia: No nula, máximo 500 caracteres
+    - fechaRegistro: 2005 - hoy
+
+✓ TIPOS DE DATOS VARIADOS:
+  - String: Campos de texto (origen, linea, alias, etc.)
+  - Primitivos numéricos: int, double, long
+  - BigDecimal: Para dinero (precio) - precisión exacta
+  - LocalDate: Manejo de fechas
+  - LocalTime: Manejo de horas
+
+✓ MÉTODO toString():
+  - Override de Object.toString()
+  - Devuelve representación legible de todos los atributos
+  - Facilita debugging y demostración
