@@ -55,25 +55,25 @@ TiendaCafePOO/
 
 ### Para Cada Clase:
 
-✅ **Atributos**: Mínimo 6 atributos de tipos variados
-- String
-- Primitivos numéricos (int, double, long)
-- Objetos propios (BigDecimal, LocalDate, LocalTime)
+- Atributos: Mínimo 6 atributos de tipos variados
+  - String
+  - Primitivos numéricos (int, double, long)
+  - Objetos propios (BigDecimal, LocalDate, LocalTime)
 
-✅ **Encapsulamiento**: Todos los atributos `private`
+- Encapsulamiento: Todos los atributos `private`
 
-✅ **Constructores**:
-- Constructor vacío con valores por defecto razonables
-- Constructor con parámetros que asigna usando setters
+- Constructores:
+  - Constructor vacío con valores por defecto razonables
+  - Constructor con parámetros que asigna usando setters
 
-✅ **Getters y Setters**: Un par por atributo con validaciones
+- Getters y Setters: Un par por atributo con validaciones
 
-✅ **Validaciones**:
-- Validación de valores nulos o vacíos
-- Validación de rangos numéricos
-- Validación de fechas (no futuras, límites específicos)
+- Validaciones:
+  - Validación de valores nulos o vacíos
+  - Validación de rangos numéricos
+  - Validación de fechas (no futuras, límites específicos)
 
-✅ **toString()**: Método Override que devuelve representación legible
+- toString(): Método Override que devuelve representación legible
 
 ## Cómo Compilar y Ejecutar
 

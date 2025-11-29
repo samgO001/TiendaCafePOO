@@ -1,8 +1,8 @@
 # Instrucciones de Compilación y Ejecución
 
 ## Requisitos Previos
-- **Java JDK 11 o superior** instalado
-- **Git** instalado (opcional, para clonar el repositorio)
+- Java JDK 11 o superior instalado
+- Git instalado (opcional, para clonar el repositorio)
 
 ## Opción 1: Compilación Manual (javac)
 
@@ -16,10 +16,10 @@ cd c:\Users\alexc\TiendaCafePOO
 New-Item -Type Directory -Path bin -Force
 
 # Compilar todos los archivos Java
-javac -d bin -sourcepath src/main/java src/main/java/Main.java src/main/java/modelo/*.java
+javac -d bin -sourcepath src/main/java src/main/java/Main.java src/main/java/app/*.java
 
 # Ejecutar el programa
-java -cp bin Main
+java -cp bin src.main.java.Main
 ```
 
 ### En Linux/Mac:
@@ -29,10 +29,10 @@ java -cp bin Main
 cd ~/TiendaCafePOO
 
 # Compilar todos los archivos Java
-javac -d bin -sourcepath src/main/java src/main/java/Main.java src/main/java/modelo/*.java
+javac -d bin -sourcepath src/main/java src/main/java/Main.java src/main/java/app/*.java
 
 # Ejecutar el programa
-java -cp bin Main
+java -cp bin src.main.java.Main
 ```
 
 ## Opción 2: Compilación y Ejecución con Maven (si Maven está instalado)
@@ -42,7 +42,7 @@ java -cp bin Main
 mvn clean compile
 
 # Ejecutar la clase Main
-mvn exec:java -Dexec.mainClass="Main"
+mvn exec:java -Dexec.mainClass="src.main.java.Main"
 
 # Crear archivo JAR ejecutable
 mvn clean package
@@ -70,15 +70,14 @@ mvn --version
 ```
 TiendaCafePOO/
 ├── src/
-│   ├── main/
-│   │   └── java/
-│   │       ├── Main.java
-│   │       └── modelo/
-│   │           ├── CafeEspecialidad.java
-│   │           ├── TicketTransporte.java
-│   │           └── PerfilRedSocial.java
+│   ├── main/java/
+│   │   ├── Main.java
+│   │   └── app/
+│   │       ├── CafeEspecialidad.java
+│   │       ├── TicketTransporte.java
+│   │       └── PerfilRedSocial.java
 │   └── test/
-├── bin/                          ← Archivos compilados (.class)
+├── bin/                          (Archivos compilados - excluido de git)
 ├── pom.xml
 ├── README.md
 ├── DIAGRAMA_UML.txt
@@ -106,15 +105,15 @@ Al ejecutar el programa, verás:
 ## Solución de Problemas
 
 ### Error: "javac: No se encontró el comando"
-- **Solución**: Java no está instalado o no está en el PATH. Instala JDK desde java.com
+- Solución: Java no está instalado o no está en el PATH. Instala JDK desde java.com
 
 ### Error: "No se puede encontrar el archivo Main.java"
-- **Solución**: Asegúrate de estar en el directorio correcto (TiendaCafePOO)
+- Solución: Asegúrate de estar en el directorio correcto (TiendaCafePOO)
 
-### Error al compilar: "paquete modelo no existe"
-- **Solución**: Asegúrate de que la estructura de carpetas es correcta y usa exactamente:
+### Error al compilar: "paquete src.main.java.app no existe"
+- Solución: Asegúrate de que la estructura de carpetas es correcta y usa exactamente:
   ```
-  javac -d bin -sourcepath src/main/java src/main/java/Main.java src/main/java/modelo/*.java
+  javac -d bin -sourcepath src/main/java src/main/java/Main.java src/main/java/app/*.java
   ```
 
 ## Notas Adicionales

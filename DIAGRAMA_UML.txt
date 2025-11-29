@@ -94,16 +94,18 @@
 ║                                          NOTAS DE DISEÑO                                                      ║
 ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-✓ ENCAPSULAMIENTO:
+NOTAS DE DISEÑO
+
+ENCAPSULAMIENTO:
   - Todos los atributos son private (-)
   - Acceso controlado mediante getters/setters públicos (+)
 
-✓ CONSTRUCTORES:
+CONSTRUCTORES:
   - Constructor vacío con valores por defecto razonables
   - Constructor con parámetros que utiliza setters para reutilizar validaciones
 
-✓ VALIDACIONES EN SETTERS:
-  • CafeEspecialidad:
+VALIDACIONES EN SETTERS:
+  CafeEspecialidad:
     - origen: No nulo, no vacío
     - temperatura: 40°C - 100°C
     - tamanio: 1 - 1000 ml
@@ -111,27 +113,27 @@
     - intensidad: 1 - 10
     - fechaTostado: 2010 - hoy
 
-  • TicketTransporte:
+  TicketTransporte:
     - linea, origen, destino: No nulo, no vacío
     - precio: 0 - 50,000
     - fecha: No futura
     - horaSalida: No nulo
 
-  • PerfilRedSocial:
+  PerfilRedSocial:
     - alias: Mínimo 3 caracteres
     - numeroSeguidores, numeroSiguiendo: No negativos
     - fotoPerfil: No nulo, no vacío
     - biografia: No nula, máximo 500 caracteres
     - fechaRegistro: 2005 - hoy
 
-✓ TIPOS DE DATOS VARIADOS:
+TIPOS DE DATOS VARIADOS:
   - String: Campos de texto (origen, linea, alias, etc.)
   - Primitivos numéricos: int, double, long
   - BigDecimal: Para dinero (precio) - precisión exacta
   - LocalDate: Manejo de fechas
   - LocalTime: Manejo de horas
 
-✓ MÉTODO toString():
+MÉTODO toString():
   - Override de Object.toString()
   - Devuelve representación legible de todos los atributos
   - Facilita debugging y demostración
